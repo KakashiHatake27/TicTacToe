@@ -25,50 +25,194 @@ namespace TicTacToe
             InitializeComponent();
         }
 
+        game game = new game();
+
+
+
         private void btnOne_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "1";
+            game.makeMove(game.Player, 8);
+            btnOne.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnOne.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+               lblResu.Content=item.ToString();
+            }
         }
 
         private void btnTwo_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "2";
+            game.makeMove(game.Player, 8);
+            btnTwo.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnTwo.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
         }
 
         private void btnThree_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "3";
+            game.makeMove(game.Player, 8);
+            btnThree.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnThree.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
         }
 
         private void btnFour_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "4";
+            game.makeMove(game.Player, 8);
+            btnFour.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnFour.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
         }
 
         private void btnFive_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "5";
+            game.makeMove(game.Player, 8);
+            btnFive.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnFive.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
         }
 
         private void btnSix_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "6";
+            game.makeMove(game.Player, 8);
+            btnSix.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnSix.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
         }
 
         private void btnSeven_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "7";
+            game.makeMove(game.Player, 8);
+            btnSeven.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnSeven.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
 
         }
 
         private void btnEight_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "8";
+            game.makeMove(game.Player, 8);
+            btnEight.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnEight.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
         }
 
         private void btnNine_Click(object sender, RoutedEventArgs e)
         {
-            lblResult.Content = "9";
+            game.makeMove(game.Player, 8);
+            btnNine.Content = game.getMark(game.Player);
+            game.switchPlayer();
+            lblResult.Content = "It is Player " + game.Player + "'s turn";
+            btnNine.IsEnabled = false;
+            if (game.isGameOver())
+            {
+                lblResult.Content = game.Player + " WINS!!!!!!!";
+            }
+
+            foreach (var item in game.GameBoard)
+            {
+                lblResu.Content = item.ToString();
+            }
+        }
+
+        private void btnTest_Click(object sender, RoutedEventArgs e)
+        {
+
+            lblResu.Content = "";
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content += item.ToString();
+            //}
+
+            int[] boa = { 0, 0, 0, 0 };
+
+
+            boa[2] = 1;
+            boa[1] = 5;
+
+
+            foreach (var i in boa)
+            {
+                lblResu.Content += i.ToString();
+            }
+            //lblResu.Content += " " + ;
         }
     }
 }
