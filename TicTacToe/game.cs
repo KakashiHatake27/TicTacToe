@@ -28,7 +28,6 @@ namespace TicTacToe
         public static void makeMove(int player, int position)
         {
             gameBoard[position] = player;
-          
         }
 
         public static string getMark(int player)
@@ -40,7 +39,6 @@ namespace TicTacToe
             else
             {
                 return "O";
-
             }
         }
 
@@ -57,10 +55,8 @@ namespace TicTacToe
         }
 
 
-
         public static bool isGameOver()
         {
-
             if ((gameBoard[0] == gameBoard[1]) && (gameBoard[1] == gameBoard[2]) && (gameBoard[2] != 0))
             {
                 return true;

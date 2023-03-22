@@ -31,14 +31,16 @@ namespace TicTacToe
 
         private void btnOne_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 0);
             btnOne.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnOne.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
+
             }
 
             foreach (var item in game.GameBoard)
@@ -49,13 +51,14 @@ namespace TicTacToe
 
         private void btnTwo_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 1);
             btnTwo.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnTwo.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -67,13 +70,14 @@ namespace TicTacToe
 
         private void btnThree_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 2);
             btnThree.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnThree.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -85,13 +89,14 @@ namespace TicTacToe
 
         private void btnFour_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 3);
             btnFour.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnFour.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -103,13 +108,14 @@ namespace TicTacToe
 
         private void btnFive_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 4);
             btnFive.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnFive.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -121,13 +127,14 @@ namespace TicTacToe
 
         private void btnSix_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 5);
             btnSix.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnSix.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -139,13 +146,14 @@ namespace TicTacToe
 
         private void btnSeven_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 6);
             btnSeven.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnSeven.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -158,13 +166,14 @@ namespace TicTacToe
 
         private void btnEight_Click(object sender, RoutedEventArgs e)
         {
-            game.makeMove(game.Player, 8);
+            game.makeMove(game.Player, 7);
             btnEight.Content = game.getMark(game.Player);
             game.switchPlayer();
             lblResult.Content = "It is Player " + game.Player + "'s turn";
             btnEight.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -183,6 +192,8 @@ namespace TicTacToe
             btnNine.IsEnabled = false;
             if (game.isGameOver())
             {
+                endGame();
+
                 lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
@@ -192,26 +203,51 @@ namespace TicTacToe
             }
         }
 
+
+        public void endGame()
+        {
+            btnOne.IsEnabled = false;
+            btnTwo.IsEnabled = false;
+            btnThree.IsEnabled = false;
+            btnFour.IsEnabled = false;
+            btnFive.IsEnabled = false;
+            btnSix.IsEnabled = false;
+            btnSeven.IsEnabled = false;
+            btnEight.IsEnabled = false;
+            btnNine.IsEnabled = false;
+
+            WinScreen ws = new WinScreen();
+            ws.Show();
+
+
+        }
+
         private void btnTest_Click(object sender, RoutedEventArgs e)
         {
 
             lblResu.Content = "";
-            //foreach (var item in game.GameBoard)
-            //{
-            //    lblResu.Content += item.ToString();
-            //}
-
-            int[] boa = { 0, 0, 0, 0 };
-
-
-            boa[2] = 1;
-            boa[1] = 5;
-
-
-            foreach (var i in boa)
+            foreach (var item in game.GameBoard)
             {
-                lblResu.Content += i.ToString();
+                lblResu.Content += item.ToString();
             }
+
+
+
+
+            WinScreen ws = new WinScreen();
+            ws.Show();
+
+            //int[] boa = { 0, 0, 0, 0 };
+
+
+            //boa[2] = 1;
+            //boa[1] = 5;
+
+
+            //foreach (var i in boa)
+            //{
+            //    lblResu.Content += i.ToString();
+            //}
             //lblResu.Content += " " + ;
         }
     }
