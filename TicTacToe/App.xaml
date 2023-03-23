@@ -4,6 +4,39 @@
              xmlns:local="clr-namespace:TicTacToe"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="{x:Type Button}"
+               x:Key="blackRounded">
+            <Setter Property="Background"
+                    Value="Black" />
+            <Setter Property="Width"
+                    Value="80" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Width="{TemplateBinding Width}"
+                              Height="{TemplateBinding Height}"
+                              ClipToBounds="True">
+                            <Rectangle x:Name="innerRectangle"
+                                       HorizontalAlignment="Stretch"
+                                       VerticalAlignment="Stretch"
+                                       Stroke="Transparent"
+                                       StrokeThickness="20"
+                                       Fill="{TemplateBinding Background}"
+                                       RadiusX="20"
+                                       RadiusY="20" />
+
+                            <DockPanel Name="myContentPresenterDockPanel">
+                                <ContentPresenter x:Name="myContentPresenter"
+                                                  Margin="20"
+                                                  Content="{TemplateBinding  Content}"
+                                                  HorizontalAlignment="Center"
+                                                  TextBlock.Foreground="White" />
+                            </DockPanel>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>

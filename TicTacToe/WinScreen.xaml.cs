@@ -28,5 +28,10 @@ namespace TicTacToe
         {
             this.Close();
         }
+
+        private void btnRetry_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

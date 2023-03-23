@@ -101,8 +101,6 @@
                FontSize="16"
                Content="It is Player 1's turn" />
 
-
-
         <Button x:Name="btnTest"
                 Click="btnTest_Click"
                 Content="Test" />

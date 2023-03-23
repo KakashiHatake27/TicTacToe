@@ -5,12 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        WindowStyle="none"
         WindowStartupLocation="CenterScreen"
-        Title="WinScreen" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="btnExit"
-                Content="exit"
-                Click="btnExit_Click" />
-    </Grid>
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Title="WinScreen"
+        Height="450"
+        Width="800">
+    <Border CornerRadius="50"
+            BorderThickness="5">
+        <Border.Background>
+            <ImageBrush x:Name="_img_bg"
+                        ImageSource="Assets/bg2.png"
+                        Stretch="Fill" />
+        </Border.Background>
+        <StackPanel Margin="60">
+
+
+            <Label 
+                HorizontalAlignment="Center"
+                FontWeight="Bold"
+                FontSize="72"
+                Foreground="White"
+                Content="GAME OVER!!" />
+
+            <Label
+                Padding="0 40  0 40"
+                FontWeight="DemiBold"
+                HorizontalAlignment="Center"
+                FontSize="32"
+                Foreground="Azure"
+                Content="PLAYER ONE WINS"/>
+
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="btnRetry"
+                        Grid.Column="0"
+                        Content="Retry"
+                        FontSize="24"
+                        Width="200"
+                        Style="{StaticResource blackRounded}"
+                        Click="btnRetry_Click"
+                        />
+
+
+                <Button x:Name="btnExit"
+                        Grid.Column="1"
+                        Content="Exit game"
+                        FontSize="24"
+                        Width="200"
+                        Style="{StaticResource blackRounded}"
+                        Click="btnExit_Click" />
+                
+            </Grid>
+
+
+           
+        </StackPanel>
+    </Border>
 </Window>
