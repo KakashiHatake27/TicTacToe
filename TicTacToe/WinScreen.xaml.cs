@@ -19,19 +19,28 @@ namespace TicTacToe
     /// </summary>
     public partial class WinScreen : Window
     {
+        public Boolean replay { get; set; }
+
+        game game = new game();
         public WinScreen()
         {
             InitializeComponent();
+            game.switchPlayer();
+            lblWinner.Content = "Player " + game.Player + " wins";
         }
-
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+
         private void btnRetry_Click(object sender, RoutedEventArgs e)
         {
 
+
+
+            replay = true;
+            Close();
         }
     }
 }

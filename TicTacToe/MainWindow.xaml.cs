@@ -39,14 +39,13 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
 
             }
 
-            foreach (var item in game.GameBoard)
-            {
-               lblResu.Content=item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //   lblResu.Content=item.ToString();
+            //}
         }
 
         private void btnTwo_Click(object sender, RoutedEventArgs e)
@@ -59,13 +58,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
         private void btnThree_Click(object sender, RoutedEventArgs e)
@@ -78,13 +76,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
         private void btnFour_Click(object sender, RoutedEventArgs e)
@@ -97,13 +94,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
         private void btnFive_Click(object sender, RoutedEventArgs e)
@@ -116,13 +112,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
         private void btnSix_Click(object sender, RoutedEventArgs e)
@@ -135,13 +130,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
         private void btnSeven_Click(object sender, RoutedEventArgs e)
@@ -154,13 +148,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
 
         }
 
@@ -174,13 +167,12 @@ namespace TicTacToe
             if (game.isGameOver())
             {
                 endGame();
-                lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
         private void btnNine_Click(object sender, RoutedEventArgs e)
@@ -194,13 +186,13 @@ namespace TicTacToe
             {
                 endGame();
 
-                lblResult.Content = game.Player + " WINS!!!!!!!";
+                //lblResult.Content = game.Player + " WINS!!!!!!!";
             }
 
-            foreach (var item in game.GameBoard)
-            {
-                lblResu.Content = item.ToString();
-            }
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content = item.ToString();
+            //}
         }
 
 
@@ -217,38 +209,74 @@ namespace TicTacToe
             btnNine.IsEnabled = false;
 
             WinScreen ws = new WinScreen();
-            ws.Show();
 
+            ws.ShowDialog();
+
+            if (ws.replay)
+            {
+                replay();
+            }
 
         }
 
+
+        public void replay() {
+            btnOne.IsEnabled = true;
+            btnTwo.IsEnabled = true;
+            btnThree.IsEnabled = true;
+            btnFour.IsEnabled = true;
+            btnFive.IsEnabled = true;
+            btnSix.IsEnabled = true;
+            btnSeven.IsEnabled = true;
+            btnEight.IsEnabled = true;
+            btnNine.IsEnabled = true;
+
+            btnOne.Content = "";
+            btnTwo.Content = "";
+            btnThree.Content = "";
+            btnFour.Content = "";
+            btnFive.Content = "";
+            btnSix.Content = "";
+            btnSeven.Content = "";
+            btnEight.Content = "";
+            btnNine.Content = "";
+
+            game.restart();
+
+            lblResult.Content = "It is Player 1's turn";
+        }
+
+
         private void btnTest_Click(object sender, RoutedEventArgs e)
         {
+            
+            //lblResu.Content = "";
+            //foreach (var item in game.GameBoard)
+            //{
+            //    lblResu.Content += item.ToString();
+            //}
 
-            lblResu.Content = "";
-            foreach (var item in game.GameBoard)
+            WinScreen ws = new WinScreen();
+            ws.ShowDialog();
+
+            if (ws.replay)
             {
-                lblResu.Content += item.ToString();
+                //MessageBox.Show("replay");
+                replay();
             }
 
 
 
+        }
 
-            WinScreen ws = new WinScreen();
-            ws.Show();
+        private void btnReplay_Click(object sender, RoutedEventArgs e)
+        {
+            replay();
+        }
 
-            //int[] boa = { 0, 0, 0, 0 };
-
-
-            //boa[2] = 1;
-            //boa[1] = 5;
-
-
-            //foreach (var i in boa)
-            //{
-            //    lblResu.Content += i.ToString();
-            //}
-            //lblResu.Content += " " + ;
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

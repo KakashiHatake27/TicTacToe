@@ -12,6 +12,7 @@
         AllowsTransparency="True"
         Title="WinScreen"
         Height="450"
+        
         Width="800">
     <Border CornerRadius="50"
             BorderThickness="5">
@@ -36,6 +37,7 @@
                 HorizontalAlignment="Center"
                 FontSize="32"
                 Foreground="Azure"
+                x:Name="lblWinner"
                 Content="PLAYER ONE WINS"/>
 
 
@@ -66,8 +68,9 @@
                 
             </Grid>
 
+            <Label x:Name="lblTest"/>
 
-           
+
         </StackPanel>
     </Border>
 </Window>

@@ -96,6 +96,15 @@ namespace TicTacToe
         }
 
 
+        public void restart() {
+            for (int i = 0; i < gameBoard.Length; i++) {
+                gameBoard[i] = 0;
+            }
+
+            Player = 1;
+        }
+
+
 
         public static void Game()
         {
