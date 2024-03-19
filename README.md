@@ -13,7 +13,7 @@ This is a classic Tic Tac Toe game implemented in C#. Currently, it features a t
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/<your-username>/tic-tac-toe.git
+   git clone https://github.com/KakashiHatake27/TicTacToe.git
    ```
 
 2. Open the solution in your preferred C# IDE (e.g., Visual Studio).
